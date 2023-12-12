@@ -19,9 +19,10 @@ Quizzes, along with their questions and answers, are stored in a SQLite database
    python3 manage.py migrate
    ```
    
-4. Run the server:
+4. Run the local server at port 8000:
 
    ```shell
-   python3 manage.py runserver
+   python3 manage.py runserver 8000
    ```
 
+5. The server should now be running at `http://127.0.0.1:8000/`. Navigate to this URL and enjoy the quiz-app :).
