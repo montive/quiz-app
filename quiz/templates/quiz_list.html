@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Quiz</h1>
+    <div>
+        <a href="{% url 'quiz_create' %}">Create quiz</a>
+    </div>
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Details</th>
+                <th scope="col">Questions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for quiz in quiz_list %}
+            <tr>
+                <td>{{quiz.name}}</td>
+                <td>{{quiz.description}}</td>
+                <td><a href="{% url 'quiz_detail' pk=quiz.id %}">See more</a></td>
+                <td><a href="{% url 'question_list' quiz_id=quiz.id %}">See questions</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
