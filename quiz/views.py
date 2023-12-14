@@ -6,7 +6,6 @@ from .forms import CreateQuiz, CreateQuestion
 from .models import Quiz, Question, Answer
 
 
-# Create your views here.
 def home(request):
     return render(request, "home.html")
 
@@ -14,6 +13,7 @@ def home(request):
 class QuizListView(ListView):
     model = Quiz
     template_name = "quiz_list.html"
+
 
 class QuizDetailView(DetailView):
     model = Quiz
@@ -53,4 +53,3 @@ class QuestionCreateView(CreateView):
 
     def get_success_url(self):
         return reverse_lazy("question_list", kwargs={"quiz_id": self.object.quiz_id})
-

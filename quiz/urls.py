@@ -1,6 +1,13 @@
 from django.urls import path
 
-from .views import home, QuizListView, QuestionListView, QuizDetailView, QuizCreateView, QuestionCreateView
+from .views import (
+    home,
+    QuizListView,
+    QuestionListView,
+    QuizDetailView,
+    QuizCreateView,
+    QuestionCreateView
+)
 
 urlpatterns = [
     path("", home, name="home"),
